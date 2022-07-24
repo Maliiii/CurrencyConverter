@@ -1,0 +1,32 @@
+<h1>Currency Converter</h1>
+<p>Choose your currencies and enter a number</p>
+
+<div class="container">
+  <div>
+    <span class="country">{{selectedValueLeft}}</span>
+    <select [(ngModel)]="selectedValueLeft" (ngModelChange)="selectCountry('inputLeft')" class="">
+      <option [value]="currency" *ngFor="let currency of currencies">{{currency}}</option>
+    </select>
+  </div>
+
+  <form [formGroup]="form" class="currency-input">
+    <input (input)="!inputLeftFromForm.errors? calculate('inputLeft'): null" formControlName="inputLeft"
+      name="inputLeft" type="text" pattern="[0-9]*[.,]{0,1}[0-9]*">
+  </form>
+
+  <div>
+    <span class="country">{{selectedValueRight}}</span>
+    <select [(ngModel)]="selectedValueRight" (ngModelChange)="selectCountry('inputRight')" class="">
+      <option [value]="currency" *ngFor="let currency of currencies">{{currency}}</option>
+    </select>
+  </div>
+
+  <form [formGroup]="form" class="currency-input">
+    <input (input)="!inputRightFromForm.errors? calculate('inputRight'): null" formControlName="inputRight"
+      name="inputRight" type="text" pattern="[0-9]*[.,]{0,1}[0-9]*">
+  </form>
+</div>
+
+<div></div>
+<span class="message" *ngIf="inputLeftFromForm.errors || inputRightFromForm.errors ">Only numbers are allowed</span>
+

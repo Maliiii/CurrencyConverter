@@ -1,0 +1,29 @@
+.currency-input {
+  margin-right: 1.5rem;
+}
+
+input:invalid {
+  border: 2px solid red;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.country {
+  margin-right: 1rem;
+  font-weight: 400;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.message {
+  margin: 1rem;
+  color: lightcoral;
+}
+
+
